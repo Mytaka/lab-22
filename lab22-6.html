@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Operations</title>
+</head>
+<body>
+    <script>
+        function performArrayOps(size) {
+            let numbers = [];
+
+            for (let index = 0; index < size; index++) {
+                numbers.push(Math.floor(Math.random() * 50));
+            }
+
+            let largest = Math.max(...numbers);
+            let smallest = Math.min(...numbers);
+
+            let total = numbers.reduce((acc, curr) => acc + curr, 0);
+
+            let mean = total / size;
+
+            let oddNumbers = numbers.filter(value => value % 2 !== 0);
+
+            console.log("Найбільше значення: " + largest);
+            console.log("Найменше значення: " + smallest);
+            console.log("Сумарне значення елементів: " + total);
+            console.log("Середнє арифметичне: " + mean.toFixed(2));
+            console.log("Непарні значення: " + oddNumbers.join(", "));
+        };
+        performArrayOps(10);
+    </script>
+</body>
+</html>
